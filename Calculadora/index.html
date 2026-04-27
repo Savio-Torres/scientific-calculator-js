@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculadora Científica Temática</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="theme-blue">
+  <main class="calculator">
+    <div class="top">
+      <div>
+        <h1>Calculadora</h1>
+      </div>
+
+      <div class="top-actions">
+        <select id="themeSelector">
+          <option value="theme-blue">Azul</option>
+          <option value="theme-dark">Preto</option>
+          <option value="theme-purple">Roxo</option>
+          <option value="theme-green">Verde</option>
+          <option value="theme-pink">Rosa</option>
+          <option value="theme-orange">Laranja</option>
+          <option value="theme-light">Claro</option>
+        </select>
+
+        <button class="science-toggle" onclick="toggleScientific()">
+          Científica
+        </button>
+      </div>
+    </div>
+
+    <div class="display">
+      <span id="previous"></span>
+      <strong id="current">0</strong>
+    </div>
+
+    <div class="buttons">
+      <div class="scientific-buttons" id="scientificButtons">
+        <button class="btn sci" onclick="scientificOperation('sin')">sin</button>
+        <button class="btn sci" onclick="scientificOperation('cos')">cos</button>
+        <button class="btn sci" onclick="scientificOperation('tan')">tan</button>
+        <button class="btn sci" onclick="scientificOperation('asin')">sin⁻¹</button>
+
+        <button class="btn sci" onclick="scientificOperation('acos')">cos⁻¹</button>
+        <button class="btn sci" onclick="scientificOperation('atan')">tan⁻¹</button>
+        <button class="btn sci" onclick="scientificOperation('sqrt')">√</button>
+        <button class="btn sci" onclick="scientificOperation('cbrt')">∛</button>
+
+        <button class="btn sci" onclick="scientificOperation('pow2')">x²</button>
+        <button class="btn sci" onclick="scientificOperation('pow3')">x³</button>
+        <button class="btn sci" onclick="chooseOperation('^')">xʸ</button>
+        <button class="btn sci" onclick="scientificOperation('inv')">1/x</button>
+
+        <button class="btn sci" onclick="scientificOperation('log')">log</button>
+        <button class="btn sci" onclick="scientificOperation('ln')">ln</button>
+        <button class="btn sci" onclick="scientificOperation('factorial')">x!</button>
+        <button class="btn sci" onclick="scientificOperation('negate')">+/-</button>
+
+        <button class="btn sci" onclick="addPi()">π</button>
+        <button class="btn sci" onclick="addE()">e</button>
+        <button class="btn sci" onclick="useAns()">Ans</button>
+        <button class="btn sci" onclick="scientificOperation('exp')">Exp</button>
+      </div>
+
+      <button class="btn action" onclick="clearDisplay()">AC</button>
+      <button class="btn action" onclick="deleteNumber()">DEL</button>
+      <button class="btn operator" onclick="percent()">%</button>
+      <button class="btn operator" onclick="chooseOperation('/')">÷</button>
+
+      <button class="btn" onclick="addNumber('7')">7</button>
+      <button class="btn" onclick="addNumber('8')">8</button>
+      <button class="btn" onclick="addNumber('9')">9</button>
+      <button class="btn operator" onclick="chooseOperation('*')">×</button>
+
+      <button class="btn" onclick="addNumber('4')">4</button>
+      <button class="btn" onclick="addNumber('5')">5</button>
+      <button class="btn" onclick="addNumber('6')">6</button>
+      <button class="btn operator" onclick="chooseOperation('-')">−</button>
+
+      <button class="btn" onclick="addNumber('1')">1</button>
+      <button class="btn" onclick="addNumber('2')">2</button>
+      <button class="btn" onclick="addNumber('3')">3</button>
+      <button class="btn operator" onclick="chooseOperation('+')">+</button>
+
+      <button class="btn zero" onclick="addNumber('0')">0</button>
+      <button class="btn" onclick="addNumber('.')">.</button>
+      <button class="btn equal" onclick="calculate()">=</button>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

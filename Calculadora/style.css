@@ -1,0 +1,281 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text);
+  padding: 15px;
+  transition: 0.4s ease;
+}
+
+/* ===== TEMAS ===== */
+
+.theme-blue {
+  --bg: radial-gradient(circle at top, #0ea5e9, #020617 65%);
+  --card: rgba(15, 23, 42, 0.9);
+  --display: linear-gradient(135deg, #020617, #0f172a);
+  --btn: #1e293b;
+  --btn-hover: #334155;
+  --operator: #0284c7;
+  --equal: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  --action: #075985;
+  --sci: #312e81;
+  --text: #ffffff;
+  --muted: #94a3b8;
+  --border: rgba(255, 255, 255, 0.14);
+}
+
+.theme-dark {
+  --bg: radial-gradient(circle at top, #475569, #020617 65%);
+  --card: rgba(2, 6, 23, 0.92);
+  --display: linear-gradient(135deg, #020617, #111827);
+  --btn: #111827;
+  --btn-hover: #1f2937;
+  --operator: #475569;
+  --equal: linear-gradient(135deg, #f8fafc, #94a3b8);
+  --action: #334155;
+  --sci: #27272a;
+  --text: #ffffff;
+  --muted: #cbd5e1;
+  --border: rgba(255, 255, 255, 0.13);
+}
+
+.theme-purple {
+  --bg: radial-gradient(circle at top, #a855f7, #1e1b4b 65%);
+  --card: rgba(30, 27, 75, 0.92);
+  --display: linear-gradient(135deg, #1e1b4b, #312e81);
+  --btn: #4c1d95;
+  --btn-hover: #6d28d9;
+  --operator: #9333ea;
+  --equal: linear-gradient(135deg, #c084fc, #a855f7);
+  --action: #7e22ce;
+  --sci: #581c87;
+  --text: #ffffff;
+  --muted: #ddd6fe;
+  --border: rgba(255, 255, 255, 0.14);
+}
+
+.theme-green {
+  --bg: radial-gradient(circle at top, #10b981, #022c22 65%);
+  --card: rgba(2, 44, 34, 0.92);
+  --display: linear-gradient(135deg, #022c22, #064e3b);
+  --btn: #065f46;
+  --btn-hover: #047857;
+  --operator: #059669;
+  --equal: linear-gradient(135deg, #6ee7b7, #10b981);
+  --action: #047857;
+  --sci: #14532d;
+  --text: #ffffff;
+  --muted: #bbf7d0;
+  --border: rgba(255, 255, 255, 0.14);
+}
+
+.theme-pink {
+  --bg: radial-gradient(circle at top, #ec4899, #500724 65%);
+  --card: rgba(80, 7, 36, 0.92);
+  --display: linear-gradient(135deg, #500724, #831843);
+  --btn: #9d174d;
+  --btn-hover: #be185d;
+  --operator: #db2777;
+  --equal: linear-gradient(135deg, #f9a8d4, #ec4899);
+  --action: #be185d;
+  --sci: #831843;
+  --text: #ffffff;
+  --muted: #fbcfe8;
+  --border: rgba(255, 255, 255, 0.14);
+}
+
+.theme-orange {
+  --bg: radial-gradient(circle at top, #fb923c, #431407 65%);
+  --card: rgba(67, 20, 7, 0.92);
+  --display: linear-gradient(135deg, #431407, #7c2d12);
+  --btn: #9a3412;
+  --btn-hover: #c2410c;
+  --operator: #ea580c;
+  --equal: linear-gradient(135deg, #fdba74, #f97316);
+  --action: #c2410c;
+  --sci: #7c2d12;
+  --text: #ffffff;
+  --muted: #fed7aa;
+  --border: rgba(255, 255, 255, 0.14);
+}
+
+.theme-light {
+  --bg: radial-gradient(circle at top, #bae6fd, #f8fafc 70%);
+  --card: rgba(255, 255, 255, 0.92);
+  --display: linear-gradient(135deg, #e0f2fe, #ffffff);
+  --btn: #f1f5f9;
+  --btn-hover: #dbeafe;
+  --operator: #38bdf8;
+  --equal: linear-gradient(135deg, #38bdf8, #0284c7);
+  --action: #bae6fd;
+  --sci: #dbeafe;
+  --text: #0f172a;
+  --muted: #64748b;
+  --border: rgba(15, 23, 42, 0.13);
+}
+
+/* ===== CALCULADORA ===== */
+
+.calculator {
+  width: 390px;
+  padding: 20px;
+  border-radius: 28px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(14px);
+}
+
+/* ===== TOPO ===== */
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.top h1 {
+  font-size: 22px;
+}
+
+.top-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 120px;
+}
+
+/* ===== SELECT + BOTÃO ===== */
+
+select,
+.science-toggle {
+  height: 38px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: var(--btn);
+  color: var(--text);
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.science-toggle.active {
+  background: var(--equal);
+  color: #000;
+}
+
+/* ===== DISPLAY ===== */
+
+.display {
+  min-height: 90px;
+  background: var(--display);
+  border-radius: 20px;
+  padding: 15px;
+  margin-bottom: 15px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#previous {
+  font-size: 14px;
+  color: var(--muted);
+}
+
+#current {
+  font-size: 34px;
+}
+
+/* ===== BOTÕES ===== */
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.scientific-buttons {
+  display: none;
+  grid-column: span 4;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.scientific-buttons.active {
+  display: grid;
+}
+
+.btn {
+  height: 52px;
+  border-radius: 14px;
+  border: none;
+  background: var(--btn);
+  color: var(--text);
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: var(--btn-hover);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+.operator {
+  background: var(--operator);
+}
+
+.equal {
+  background: var(--equal);
+  color: #000;
+}
+
+.action {
+  background: var(--action);
+}
+
+.sci {
+  background: var(--sci);
+  font-size: 13px;
+  height: 45px;
+}
+
+.zero {
+  grid-column: span 2;
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media (max-width: 480px) {
+  .calculator {
+    width: 100%;
+  }
+
+  .btn {
+    height: 48px;
+    font-size: 16px;
+  }
+
+  .sci {
+    height: 42px;
+    font-size: 12px;
+  }
+
+  #current {
+    font-size: 28px;
+  }
+}
